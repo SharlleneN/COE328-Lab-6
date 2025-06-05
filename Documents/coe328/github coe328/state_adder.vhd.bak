@@ -1,0 +1,19 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity state_display is
+port (
+	state_in : in unsigned(3 downto 0);
+	state_out : out unsigned(3 down 0)
+);
+end sseg_mod;
+
+architecture Behavior of sseg_mod is
+	signal state_add : unsigned(3 downto 0); -- 8-bit Result
+	begin
+	process(state_in)
+		begin
+			state_add<=state_in+1;
+	end process;
+	state_out<=state_add;
+end Behavior; 
